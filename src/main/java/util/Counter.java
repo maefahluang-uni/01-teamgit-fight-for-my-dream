@@ -76,6 +76,31 @@ private boolean isPrime(int number) {
 public void decrementToPrime() {
     // Ensure _ctr is a non-negative integer
     _ctr = Math.max(_ctr, 0);
+    
+    // Find the closest prime number less than or equal to the decremented value
+    _ctr = findClosestPrime(_ctr - 1);
+}
+
+// Helper method to find the closest prime number less than or equal to a given number
+private int findClosestPrime(int num) {
+    while (!isPrime2(num)) {
+        num--;
+    }
+    return num;
+}
+
+// Helper method to check if a number is prime
+private boolean isPrime2(int num) {
+    if (num <= 1) {
+        return false;
+    }
+    for (int i = 2; i <= Math.sqrt(num); i++) {
+        if (num % i == 0) {
+            return false;
+        }
+    }
+    return true;
+}
 
 	// TODO: dev3- count the frequency of word in sentence,
 	// refactor source code from dev1 and dev2 ...
