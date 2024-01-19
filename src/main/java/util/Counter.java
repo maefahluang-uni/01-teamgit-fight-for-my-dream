@@ -77,33 +77,19 @@ public void decrementToPrime() {
     // Ensure _ctr is a non-negative integer
     _ctr = Math.max(_ctr, 0);
 
-    // Decrement _ctr until a prime number is reached
-    while (!isPrime2(_ctr)) {
-        _ctr--;
-        if (_ctr < 2) {
-            // Avoid negative values and ensure the loop doesn't run indefinitely
-            break;
-        }
-    }
-}
-
-// Helper method to check if a number is prime
-private boolean isPrime2(int number) {
-    if (number < 2) {
-        return false;
-    }
-    for (int i = 2; i <= Math.sqrt(number); i++) {
-        if (number % i == 0) {
-            return false;
-        }
-    }
-    return true;
-}
-
 	// TODO: dev3- count the frequency of word in sentence,
-	// refactor source code from dev1 and dev2 ..
+	// refactor source code from dev1 and dev2 ...
 	public void countFrequency(String word, String sentence) {
-		_ctr = -99;
+		StringTokenizer tokenizer = new StringTokenizer(sentence);
+		int count = 0;
+
+		while (tokenizer.hasMoreTokens()) {
+			if (tokenizer.nextToken().equalsIgnoreCase(word)) {
+				count++;
+			}
+		}
+
+		_ctr = count;
 	}
 
 }
