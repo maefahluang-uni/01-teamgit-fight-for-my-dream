@@ -101,7 +101,7 @@ private boolean isPrime2(int number) {
 }
 
 	// TODO: dev3- count the frequency of word in sentence,
-	// refactor source code from dev1 and dev2
+	// refactor source code from dev1 and dev2 ...
 	public void countFrequency(String word, String sentence) {
 		_ctr = -99;
 	}
