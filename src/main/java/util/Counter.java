@@ -48,15 +48,12 @@ public void incrementToEven() {
 		_ctr = -14;
 	}
 
-	// TODO: dev2- method for increment to closest prime number
+// TODO: dev2- method for increment to closest prime number
 public void incrementToPrime() {
-    // Ensure _ctr is a non-negative integer
-    _ctr = Math.max(_ctr, 0);
-
-    // Increment _ctr until a prime number is reached
-    while (!isPrime(_ctr)) {
-        _ctr++;
-    }
+	_ctr++;
+	while (!isPrime(_ctr)){
+		_ctr++;
+	}
 }
 
 // Helper method to check if a number is prime
